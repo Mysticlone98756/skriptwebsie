@@ -1,0 +1,3 @@
+on join:
+    wait 1 seconds
+    send "&aWelcome &c%player% &ato &b&lConcreteBox!" to player

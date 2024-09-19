@@ -1,0 +1,16 @@
+command /enchant [<enchantment type>]:
+    description: Enchant your held item.
+    permission: sk.enchant
+    permission message: {@nopermission}
+    aliases: /enchantment
+    trigger:
+        if arg-1 is not set:
+            message "&cUsage: /enchant <enchantment>"
+            stop
+        if player's tool is air:
+            message "&cUsage: /enchant <enchantment>"
+            stop
+        else:
+            enchant player's tool with arg-1
+            send "&7Your item has been enchanted with &c%arg-1%."
+            stop

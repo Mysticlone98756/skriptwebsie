@@ -1,0 +1,11 @@
+command /spawn <player>:
+permission: minecraft.op
+permission message: "You can't teleport someone else!"
+trigger:
+        if arg-l is set:
+                
+                teleport arg-l to location(0, 0, 0, world("world"))
+
+        else: 
+
+                teleport player to location(0, 0, 0, world("world"))

@@ -1,0 +1,3 @@
+on quit:
+    wait 1 seconds
+    broadcast "&6 Goodbye &6&n%player%!"

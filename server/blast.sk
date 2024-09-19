@@ -1,0 +1,29 @@
+command /blast [<number>]:
+    permission: blast.use
+    permission message: "&cYou don't have permission to use this command."
+    trigger:
+        if player's tool is a wooden pickaxe, stone pickaxe, iron pickaxe, golden pickaxe, diamond pickaxe, netherite pickaxe, wooden axe, stone axe, iron axe, golden axe, diamond axe, or netherite axe:
+            if player has permission "blast.enchant":
+                if argument is not set:
+                    send "&cYou must specify a blast level (1, 2, or 3)." to player
+                else if argument is 1:
+                    send "&aYou activated Blast Level 1!" to player
+                    add "&7Blast I" to lore of player's tool
+                    loop blocks in radius 1 around the block in front of player:
+                        break loop-block naturally
+                else if argument is 2:
+                    send "&aYou activated Blast Level 2!" to player
+                    add "&7Blast II" to lore of player's tool
+                    loop blocks in radius 2 around the block in front of player:
+                        break loop-block naturally
+                else if argument is 3:
+                    send "&aYou activated Blast Level 3!" to player
+                    add "&7Blast III" to lore of player's tool
+                    loop blocks in radius 3 around the block in front of player:
+                        break loop-block naturally
+                else:
+                    send "&cInvalid blast level! Please use 1, 2, or 3." to player
+            else:
+                send "&cYou don't have permission to enchant this tool." to player
+        else:
+            send "&cYou must be holding a valid axe or pickaxe to use this command." to player

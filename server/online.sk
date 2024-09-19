@@ -1,0 +1,6 @@
+command /online:
+    trigger:
+
+        send "&bThere is %amount of players% online currently!" to player
+
+        send "Who is online: %players%" to player

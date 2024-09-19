@@ -1,0 +1,3 @@
+command /discordbd:
+    trigger:
+        send "Join Our Discord Here: https://discord.gg/nuW6BPq3B3"

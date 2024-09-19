@@ -1,0 +1,43 @@
+on death of a player:
+    attacker is a player
+    
+    # Increase the attacker's killstreak and session kills
+    add 1 to {killstreak::%attacker%}
+    add 1 to {sessionkills::%attacker%}
+    add 1 to {totalkills::%attacker%}
+    set {_streak} to {killstreak::%attacker%}
+
+    # Killstreak announcements
+    if {_streak} is 5:
+        broadcast "&e%attacker% &ais on a &e5 killstreak!"
+    if {_streak} is 10:
+        broadcast "&e%attacker% &ais on a &e10 killstreak!"
+    if {_streak} is 15:
+        broadcast "&e%attacker% &ais on a &e15 killstreak!"
+    if {_streak} is 20:
+        broadcast "&e%attacker% &ais on a &e20 killstreak!"
+    if {_streak} is 25:
+        broadcast "&e%attacker% &ais on a &e25 killstreak!"
+
+    # Notify the attacker of their current killstreak
+    send "&aYou are on a killstreak of &e%{killstreak::%attacker%}% &akills!" to attacker
+
+    # Reset the victim's killstreak
+    set {killstreak::%victim%} to 0
+    send "&cYour killstreak has been reset!" to victim
+
+on death:
+    # Reset the killstreak for the player who dies
+    set {killstreak::%victim%} to 0
+
+command /killstreak:
+    trigger:
+        send "&aYour current killstreak is &e%{killstreak::%player%}% &akills!" to player
+
+command /killstreak total:
+    trigger:
+        send "&aYour total kills are &e%{totalkills::%player%}% &akills!" to player
+
+command /killstreak session:
+    trigger:
+        send "&aYour session kills are &e%{sessionkills::%player%}% &akills!" to player

@@ -1,0 +1,3 @@
+on join:
+    wait 1 seconds
+    broadcast "&aWelcome &c%player% &ato &b&lConcreteBox! We now have %amount of players% online!"

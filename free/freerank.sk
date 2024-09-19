@@ -1,0 +1,4 @@
+command /freerank:
+    trigger:
+        send "&6&lFree rank!"
+        execute console command "/lp user %player% parent add freerank"

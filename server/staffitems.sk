@@ -1,0 +1,5 @@
+
+command /givestaffweapons:
+    permission: minecraft.op
+    trigger:
+        give player netherite sword named "&a1 Shot &bWonder"

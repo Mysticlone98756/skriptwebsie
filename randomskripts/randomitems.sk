@@ -1,0 +1,15 @@
+every 10 seconds:
+    loop all players:
+        if {%loop-player%.random} = true:
+            give loop-player a random element of all items
+            wait 40 ticks
+
+
+command /toggle:
+    trigger:
+        if {%player%.random} = true:
+            set {%player%.random} to false
+            message "&c&lYou have disabled random items" to player
+        else:
+        set {%player%.random} to true
+        message "&c&lYou have turned on random items" to player

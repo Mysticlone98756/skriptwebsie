@@ -1,0 +1,4 @@
+command /enderchest:
+    aliases: ec
+    trigger:   
+        open ender chest of player to player 

@@ -1,0 +1,5 @@
+command /dupe:
+    trigger:
+        set {_item} to player's tool
+        give {_item} to player
+        stop

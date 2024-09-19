@@ -1,0 +1,5 @@
+on death:
+    if attacker is a player:
+        set arg-1 to player
+            make console execute command "/effect  regeneration 5 5 true"
+        stop

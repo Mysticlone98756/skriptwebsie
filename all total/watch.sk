@@ -1,0 +1,43 @@
+# StaffExtras By Mysticlone98756
+#   Plugins Needed: 
+#       Skript
+#       (thats all lol)
+#
+# Use "staffextras.endwatch" and "staffextras.staffwatch" for command permissions!
+
+options:
+    prefix: &bStaff&f&lExtras &a|&f
+
+watch <player>:
+    permission: staffextras.staffwatch
+    permission message: "{@prefix} &cYou don't have sufficient permissions to execute this command!"
+    usage: "&c/staffwatch <player>"
+    trigger:
+        if player does not have permission "staffextras.staffwatch":
+            send "{@prefix} You're not permitted to execute this command!" to player
+        
+        else if arg-1 is offline:
+            send "{@prefix} Player not found or offline!" to player
+
+        else:
+            set {arg} to arg-1
+            set {_origpos} to player's location
+            set {_location} to arg-1's location
+            set player's gamemode to spectator
+            teleport player to {_location}
+            send "{@prefix} &aYou're now watching &b%arg-1%!" to player
+
+
+command /endwatch:
+    permission: staffextras.endwatch
+    permission message: "{@prefix} &cYou don't have sufficient permissions to execute this command"
+    usage "&c/endwatch"
+    trigger:
+        if player does not have permission "staffextras.endwatch":
+            send "{@prefix} &cYou're not permitted to execute this command!" to player
+
+        else:
+            teleport player to {_origpos}
+            set player's gamemode to survival
+            send "{@prefix} &aYou're no longer watching &b{arg}!"
+# new command time! 12/17/23

@@ -1,0 +1,3 @@
+command /plugins:
+    trigger:
+        send "&4You Don't have permission to see plugins!" to player
